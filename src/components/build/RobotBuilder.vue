@@ -157,7 +157,6 @@ export default {
 };
 </script>
 
-
 <style scoped>
 .part {
   position: relative;
