@@ -10,27 +10,24 @@
       </nav>
     </header>
     <main>
-      <RobotBuilder />
+      <router-view/>
     </main>
   </div>
 </template>
 
 <script>
-// import HomePage from './components/home/HomePage.vue';
-import RobotBuilder from './components/build/RobotBuilder.vue';
-
 export default {
   name: 'App',
-  components: {
-    RobotBuilder,
-  },
 };
 </script>
 
 <style>
-body {
-  background: linear-gradient(to bottom, #555, #999 );
-}
+  body {
+    background: linear-gradient(to bottom, #555, #999 );
+  }
+</style>
+
+<style scoped>
 main {
   margin: 0 auto;
   padding: 30px;
