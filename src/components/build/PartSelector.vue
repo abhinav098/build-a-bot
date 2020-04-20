@@ -1,6 +1,6 @@
 <template>
   <div :class="position" class="part">
-    <img :src="selectedPart.src" title="arm"/>
+    <img @click="selectPartInfo()" :src="selectedPart.src" title="arm"/>
     <button @click="selectPreviousPart()" class="prev-selector"></button>
     <button @click="selectNextPart()" class="next-selector"></button>
     <span class="sale" v-if="selectedPart.onSale">Sale!</span>
@@ -47,6 +47,15 @@ export default {
     },
   },
   methods: {
+    selectPartInfo() {
+      this.$router.push({
+        name: 'Parts',
+        params: {
+          partType: this.selectedPart.type,
+          id: this.selectedPart.id,
+        },
+      });
+    },
     selectNextPart() {
       this.selectedPartIndex = getNextValidIndex(
         this.selectedPartIndex,
@@ -91,6 +100,7 @@ export default {
 }
 .part img {
   width:165px;
+  cursor: pointer;
 }
 .top {
   border-bottom: none;
