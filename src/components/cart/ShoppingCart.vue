@@ -69,7 +69,7 @@ export default {
       return !this.cart.length;
     },
     cart() {
-      return this.$store.state.cart;
+      return this.$store.state.robots.cart;
     },
     cartTotal() {
       const cost = this.cart.map((cartItem) => cartItem.cost);
