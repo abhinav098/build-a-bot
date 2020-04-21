@@ -1,16 +1,18 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HomePage from '../components/home/HomePage.vue';
-import StandardSidebar from '../components/sidebars/SidebarStandard.vue';
-import BrowseSidebar from '../components/sidebars/SidebarBrowse.vue';
 import BuildSidebar from '../components/sidebars/SidebarBuild.vue';
-import RobotBuilder from '../components/build/RobotBuilder.vue';
+import HomePage from '../components/home/HomePage.vue';
+import BrowseSidebar from '../components/sidebars/SidebarBrowse.vue';
 import PartInfo from '../components/parts/PartInfo.vue';
+import RobotBuilder from '../components/build/RobotBuilder.vue';
 import BrowseParts from '../components/parts/BrowseParts.vue';
 import RobotHeads from '../components/parts/RobotHeads.vue';
 import RobotArms from '../components/parts/RobotArms.vue';
 import RobotTorsos from '../components/parts/RobotTorsos.vue';
 import RobotBases from '../components/parts/RobotBases.vue';
+import StandardSidebar from '../components/sidebars/SidebarStandard.vue';
+import CartSidebar from '../components/sidebars/SidebarCart.vue';
+import ShoppingCart from '../components/cart/ShoppingCart.vue';
 
 Vue.use(Router);
 
@@ -23,6 +25,14 @@ export default new Router({
       components: {
         default: HomePage,
         sidebar: StandardSidebar,
+      },
+    },
+    {
+      path: '/cart',
+      name: 'ShoppingCart',
+      components: {
+        default: ShoppingCart,
+        sidebar: CartSidebar,
       },
     },
     {

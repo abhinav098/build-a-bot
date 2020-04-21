@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="header">
-      <span v-if="open" @click="open = !open"> &#x25B2; Collapse </span>
-      <span v-if="!open" @click="open = !open"> &#x25BC; Expand </span>
+      <span v-if="open" @click="open = !open"> &#x25B2; See Less </span>
+      <span v-if="!open" @click="open = !open"> &#x25BC; See More </span>
     </div>
     <slot v-if="open">
       <div class="default">
-        Default Content
+        Nothing to show!!
       </div>
     </slot>
   </div>
@@ -24,8 +24,8 @@ export default {
 
 <style scoped>
   .header {
+    font-size: 12px;
     padding: 3px;
-    background-color: gray;
     cursor: pointer;
   }
 </style>

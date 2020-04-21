@@ -3,21 +3,29 @@
     <header>
       <nav>
         <ul>
-          <router-link class="nav-link" :to="{name: 'Home'}" exact>
-            <li class="nav-item">
+          <li class="nav-item">
+            <router-link class="nav-link" :to="{name: 'Home'}" exact>
               <img class="logo" src="./assets/build-a-bot-logo.png"> Build a Bot
-            </li>
-          </router-link>
-          <router-link class="nav-link" :to="{name: 'Build'}" exact>
+            </router-link>
+          </li>
             <li class="nav-item">
-              Build
+              <router-link class="nav-link" :to="{name: 'Build'}" exact>
+                Build
+              </router-link>
             </li>
-          </router-link>
-          <router-link class="nav-link" :to="{name: 'BrowseParts'}" exact>
             <li class="nav-item">
-              Browse
+              <router-link class="nav-link" :to="{name: 'BrowseParts'}" exact>
+                Browse
+              </router-link>
             </li>
-          </router-link>
+            <li class="nav-item cart">
+              <router-link class="nav-link" to="/cart" exact>
+                Cart
+                <div class="cart-length">
+                  {{cart.length}}
+                </div>
+              </router-link>
+            </li>
         </ul>
       </nav>
     </header>
@@ -35,6 +43,11 @@
 <script>
 export default {
   name: 'App',
+  computed: {
+    cart() {
+      return this.$store.state.cart;
+    },
+  },
 };
 </script>
 
@@ -69,6 +82,11 @@ ul {
   font-size: 22px;
   border-right: 1px solid #bbb;
 }
+.nav-item.cart {
+  position: relative;
+  margin-left: auto;
+  border-right: none;
+}
 .logo {
   vertical-align: middle;
   height: 30px;
@@ -90,5 +108,18 @@ ul {
   width: 100px;
   min-height: 300px;
   background-color: #aaa;
+}
+.cart-length {
+  position: absolute;
+  border: 1px solid seagreen;
+  border-radius: 100px;
+  font-size: 15px;
+  top: -5px;
+  text-align: center;
+  width: 20px;
+  display: inline-block;
+  font-weight: bold;
+  right: -9px;
+  background-color: seagreen;
 }
 </style>
