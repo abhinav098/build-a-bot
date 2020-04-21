@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export default {
+  namespaced: true,
   state: {
     user: null,
   },
@@ -8,8 +9,6 @@ export default {
     updateCurrentUser(state, user) {
       state.user = user;
     },
-  },
-  getters: {
   },
   actions: {
     signIn({ commit }) {
