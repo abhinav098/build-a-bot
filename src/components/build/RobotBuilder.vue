@@ -56,7 +56,7 @@
 import { mapActions } from 'vuex';
 import createdMixin from './create-mixin';
 import PartSelector from './PartSelector.vue';
-import CollapsibleContent from '../shared/CollapsibleContent.vue';
+import CollapsibleContent from '../../shared/CollapsibleContent.vue';
 
 export default {
   name: 'RobotBuilder',
