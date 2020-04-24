@@ -1,4 +1,5 @@
 import axios from 'axios';
+import parts from '../../data/parts';
 
 export default {
   namespaced: true,
@@ -10,8 +11,8 @@ export default {
     addToCart(state, robot) {
       state.cart.push(robot);
     },
-    updateParts(state, parts) {
-      state.parts = parts;
+    updateParts(state, robotParts) {
+      state.parts = robotParts;
     },
   },
   getters: {
@@ -21,9 +22,7 @@ export default {
   },
   actions: {
     getParts({ commit }) {
-      axios.get('/api/parts')
-        .then((result) => commit('updateParts', result.data))
-        .catch(console.error);
+      commit('updateParts', parts);
     },
     addRobotToCart({ commit, state }, robot) {
       const cart = [...state.cart, robot];
